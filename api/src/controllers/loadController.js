@@ -4,7 +4,6 @@ const loadSchema = require("../models/Load");
 
 
 const postProduct = async (req, res) => {
-  validateCreate;
   const product = loadSchema(req.body);
 
   product
