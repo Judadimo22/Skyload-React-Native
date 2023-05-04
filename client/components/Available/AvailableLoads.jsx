@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Provider, useDispatch, useSelector } from 'react-redux';
-import Load from './Load';
+import { useDispatch, useSelector } from 'react-redux';
+import AvailableLoad from './AvailableLoad';
 import { getLoads } from '../redux/actions';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 
-
-export const Loads = () => {
+export const AvailableLoads = () => {
 
   const [products, setProducts] = useState([]);
   const [sortType, setSortType] = useState("asc");
@@ -35,24 +34,13 @@ export const Loads = () => {
 
 
   return (
-          <View style={styles.container}>
-          <View style={styles.containerText}>
+    <View>
+          <View>
         {
           Loads.length ?
             Loads.slice(pageSliceStart, pageSliceEnd).map(load => (<Load key={load._id} load={load} />)) : null  
         }
           </View>      
-         </View>
-
+    </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems:'center',
-    marginTop:'70%',
-    display:'flex',
-  },
-
-});
-

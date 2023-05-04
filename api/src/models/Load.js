@@ -11,6 +11,10 @@ const loadSchema = new Schema(
       required: true,
       unique: true,
     },
+    status: {
+      type: String,
+      required: true
+    }
   },
   { timestamps: true }
 );
